@@ -1,0 +1,326 @@
+<?php
+declare(strict_types=1);
+
+$status = $_GET['status'] ?? '';
+$message = '';
+$messageType = '';
+
+if ($status === 'success') {
+    $message = 'Your request has been sent successfully. Our team will contact you shortly.';
+    $messageType = 'success';
+} elseif ($status === 'error') {
+    $message = 'We could not send your request. Please review the form and try again.';
+    $messageType = 'error';
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamri Express | Morocco to Europe Delivery</title>
+    <meta name="description" content="Zamri Express provides fast, secure, and reliable logistics services from Morocco to Europe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header" id="home">
+        <nav class="navbar">
+            <div class="navbar-inner container">
+                <a href="#home" class="logo">Zamri <span>Express</span></a>
+                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-menu">
+                    <a href="#home">Home</a>
+                    <a href="#services">Our Services</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero container">
+            <div class="hero-copy">
+                <span class="eyebrow">Trusted cross-border logistics</span>
+                <h1>From Morocco to Europe: Fast &amp; Secure Delivery</h1>
+                <p>
+                    Fast, dependable, and professionally managed delivery services connecting Morocco to Europe with the
+                    confidence your shipment deserves.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+                <div class="hero-metrics">
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Support</span>
+                    </div>
+                    <div>
+                        <strong>EU</strong>
+                        <span>Coverage</span>
+                    </div>
+                    <div>
+                        <strong>Safe</strong>
+                        <span>Handling</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="logo-showcase" role="button" tabindex="0" aria-label="Flip logo card">
+                    <div class="logo-flip-card">
+                        <div class="logo-frame logo-face logo-front">
+                            <img src="logo.png" alt="Zamri Express logo" class="brand-logo">
+                        </div>
+                        <div class="logo-frame logo-face logo-back">
+                            <span class="logo-back-tag">Zamri Express</span>
+                            <h3>Fast routes, secure delivery, and trusted logistics.</h3>
+                            <p>Moving shipments from Morocco to Europe with professionalism, clarity, and confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="trust-strip">
+            <div class="container trust-grid">
+                <div>Professional logistics coordination</div>
+                <div>Fast delivery routes to Europe</div>
+                <div>Transparent communication</div>
+            </div>
+        </section>
+
+        <section class="services section container" id="services">
+            <div class="services-shell">
+                <div class="section-heading services-heading">
+                    <span class="eyebrow">Our Services</span>
+                    <h2>Smart logistics solutions for every type of shipment</h2>
+                    <p>Choose the shipping method that fits your timeline, package type, and delivery priority across Europe.</p>
+                </div>
+                <div class="services-highlight">
+                    <div class="services-highlight-copy">
+                        <span class="services-kicker">Built for confidence</span>
+                        <h3>Simple shipping, stronger execution</h3>
+                        <p>Clear planning, reliable movement, and professional follow-up from departure to final delivery.</p>
+                    </div>
+                    <div class="services-mini-stats">
+                        <div>
+                            <strong>Routes</strong>
+                            <span>Organized for timing</span>
+                        </div>
+                        <div>
+                            <strong>Support</strong>
+                            <span>Responsive and direct</span>
+                        </div>
+                        <div>
+                            <strong>Care</strong>
+                            <span>Handled professionally</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-grid">
+                <article class="service-card">
+                    <div class="service-card-top">
+                        <div class="service-icon">🚚</div>
+                        <span class="service-tag">Ground Network</span>
+                    </div>
+                    <h3>Road Freight</h3>
+                    <p>Reliable road transport for planned deliveries to major European destinations.</p>
+                    <ul class="service-list">
+                        <li>Reliable departures and planned delivery windows</li>
+                        <li>Ideal for commercial goods and recurring shipments</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <div class="service-card-top">
+                        <div class="service-icon">✈</div>
+                        <span class="service-tag">Priority Shipping</span>
+                    </div>
+                    <h3>Air Express</h3>
+                    <p>Priority air delivery for urgent parcels that need faster arrival times.</p>
+                    <ul class="service-list">
+                        <li>Best for urgent documents and priority parcels</li>
+                        <li>Responsive support for time-sensitive deliveries</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <div class="service-card-top">
+                        <div class="service-icon">📦</div>
+                        <span class="service-tag">Cost Optimized</span>
+                    </div>
+                    <h3>Parcel Consolidation</h3>
+                    <p>Grouped shipping solutions designed to improve value and reduce unnecessary transport costs.</p>
+                    <ul class="service-list">
+                        <li>Smarter freight planning for multiple packages</li>
+                        <li>Optimized dispatch to improve shipping value</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="services-bottom-note">
+                <p>Need a custom route or special handling? We can prepare a tailored shipping plan for your request.</p>
+                <a href="#contact" class="btn btn-primary">Talk to Our Team</a>
+            </div>
+        </section>
+
+        <section class="about-band">
+            <div class="container about-grid">
+                <div class="about-intro">
+                    <span class="eyebrow">Why Zamri Express</span>
+                    <h2>Built for trust, speed, and control</h2>
+                    <p>Everything is designed to keep shipping clear, reliable, and professionally managed.</p>
+                </div>
+                <div class="about-points">
+                    <article class="about-point-card">
+                        <strong>Reliable planning</strong>
+                        <p>Routes organized with care.</p>
+                    </article>
+                    <article class="about-point-card">
+                        <strong>Secure handling</strong>
+                        <p>Your shipment stays protected.</p>
+                    </article>
+                    <article class="about-point-card">
+                        <strong>Fast response</strong>
+                        <p>Quick support when needed.</p>
+                    </article>
+                    <article class="about-point-card">
+                        <strong>Clear follow-up</strong>
+                        <p>Simple communication throughout.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section container" id="contact">
+            <div class="section-heading left">
+                <span class="eyebrow">Contact Us</span>
+                <h2>Request delivery assistance</h2>
+                <p>Share your shipment details and our team will get back to you with the best delivery option.</p>
+            </div>
+
+            <?php if ($message !== ''): ?>
+                <div class="form-alert <?= $messageType === 'success' ? 'success' : 'error' ?>">
+                    <?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="contact-layout">
+                <form class="contact-form" action="send_msg.php" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Delivery Destination</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Select destination</option>
+                            <option value="France">France</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Portugal">Portugal</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label for="package_description">Package Description</label>
+                        <textarea id="package_description" name="package_description" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group full">
+                        <button type="submit" class="btn btn-primary form-submit">Send Request</button>
+                    </div>
+                </form>
+
+                <div class="contact-side">
+                    <aside class="contact-card contact-card--email">
+                        <h3>Email</h3>
+                        <p>Send us your shipment details and we will reply as soon as possible.</p>
+                        <a class="contact-email" href="mailto:contact@zamriexpress.com">contact@zamriexpress.com</a>
+                    </aside>
+
+                    <aside class="contact-card contact-card--social">
+                        <h3>Social media</h3>
+                        <p>Reach out on your preferred channel.</p>
+                        <div class="social-links" aria-label="Zamri Express social media links">
+                            <a class="social-link social-link--instagram" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 2.9c2.6 0 2.9 0 3.9.1 1 0 1.6.2 2 .4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.4.4 1 .4 2 .1 1 .1 1.3.1 3.9s0 2.9-.1 3.9c0 1-.2 1.6-.4 2-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.4.2-1 .4-2 .4-1 .1-1.3.1-3.9.1s-2.9 0-3.9-.1c-1 0-1.6-.2-2-.4-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.4-.4-1-.4-2C2.9 14.9 2.9 14.6 2.9 12s0-2.9.1-3.9c0-1 .2-1.6.4-2 .2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .4-.2 1-.4 2-.4 1-.1 1.3-.1 3.9-.1Zm0-1.7c-2.6 0-2.9 0-4 .1-1.1 0-1.9.2-2.6.5-.7.3-1.4.7-2 1.3-.6.6-1 1.3-1.3 2-.3.7-.5 1.5-.5 2.6C1.2 9.1 1.2 9.4 1.2 12s0 2.9.1 4c0 1.1.2 1.9.5 2.6.3.7.7 1.4 1.3 2 .6.6 1.3 1 2 1.3.7.3 1.5.5 2.6.5 1.1.1 1.4.1 4 .1s2.9 0 4-.1c1.1 0 1.9-.2 2.6-.5.7-.3 1.4-.7 2-1.3.6-.6 1-1.3 1.3-2 .3-.7.5-1.5.5-2.6.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-1.1-.2-1.9-.5-2.6-.3-.7-.7-1.4-1.3-2-.6-.6-1.3-1-2-1.3-.7-.3-1.5-.5-2.6-.5-1.1-.1-1.4-.1-4-.1Z"/>
+                                </svg>
+                            </a>
+                            <a class="social-link social-link--facebook" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M13.8 21.8v-7.4h2.5l.4-2.9h-2.9V9.6c0-.8.2-1.4 1.4-1.4h1.6V5.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v1.6H7.3v2.9h2.8v7.4h3.7Z"/>
+                                </svg>
+                            </a>
+                            <a class="social-link social-link--x" href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M18.3 2H21l-6.5 7.4L22 22h-6.5l-5.1-6.7L4.6 22H2l7-8L2 2h6.7l4.6 6.1L18.3 2Zm-1 18.2h1.5L7.9 3.7H6.2l11.1 16.5Z"/>
+                                </svg>
+                            </a>
+                            <a class="social-link social-link--whatsapp" href="https://wa.me/212600000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M20.5 11.7c0 4.8-3.9 8.6-8.6 8.6-1.5 0-3-.4-4.3-1.1L3 20.7l1.5-4.5c-.8-1.3-1.2-2.9-1.2-4.5 0-4.8 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6Zm-8.6-7c-3.9 0-7 3.1-7 7 0 1.5.5 2.9 1.3 4.1l.2.3-.9 2.6 2.7-.9.3.2c1.2.7 2.5 1.1 3.9 1.1 3.9 0 7-3.1 7-7s-3.1-7-7-7Zm4.1 9.6c-.2-.1-1.1-.6-1.3-.6-.2-.1-.4-.1-.6.1-.2.2-.7.6-.8.8-.2.2-.3.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.8 2.3.9 2.5.1.2 1.6 2.5 3.8 3.5.5.2.9.4 1.2.5.5.2.9.1 1.2.1.4-.1 1.1-.4 1.2-.8.1-.4.1-.8.1-.8 0-.1-.2-.2-.4-.3Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="location section" id="location">
+            <div class="container">
+                <div class="section-heading left">
+                    <span class="eyebrow">Location</span>
+                    <h2>Find Zamri Express</h2>
+                    <p>Use the map for directions or open Google Maps to navigate.</p>
+                </div>
+
+                <div class="location-layout">
+                    <div class="map-frame" role="region" aria-label="Zamri Express map">
+                        <iframe
+                            title="Zamri Express on Google Maps"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps?q=34.2658495,-6.5752039&z=15&output=embed">
+                        </iframe>
+                    </div>
+
+                    <aside class="location-card">
+                        <h3>Visit us</h3>
+                        <p>34.2658495, -6.5752039</p>
+                        <div class="location-actions">
+                            <a class="btn btn-primary" href="https://www.google.com/maps/place/Zamri+Express/@34.2658495,-6.5752039,15z/data=!4m6!3m5!1s0xda7570028093de3:0xc5852af9b912b9b7!8m2!3d34.2658495!4d-6.5752039!16s%2Fg%2F11nbbf9pf4!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+                                Open in Google Maps
+                            </a>
+                            <a class="btn btn-secondary" href="#contact">Request delivery</a>
+                        </div>
+                        <ul class="location-facts">
+                            <li>Fast directions from your phone</li>
+                            <li>Share location with your driver</li>
+                            <li>Easy route planning</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
