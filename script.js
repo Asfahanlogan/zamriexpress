@@ -2,6 +2,7 @@ const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const logoShowcase = document.querySelector('.logo-showcase');
 const formAlert = document.querySelector('#formAlert');
+const contactForm = document.querySelector('#contactForm');
 
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
@@ -57,4 +58,41 @@ if (formAlert) {
         formAlert.classList.add('error');
         formAlert.hidden = false;
     }
+}
+
+if (contactForm && formAlert) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        formAlert.classList.remove('success', 'error');
+        formAlert.textContent = '';
+        formAlert.hidden = true;
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+            const res = await fetch('api_contact.php', {
+                method: 'POST',
+                credentials: 'same-origin',
+                body: new FormData(contactForm),
+            });
+
+            const data = await res.json().catch(() => null);
+            if (!data || data.ok !== true) {
+                throw new Error(data?.error || `http_${res.status}`);
+            }
+
+            formAlert.textContent = 'Your request has been sent successfully. Our team will contact you shortly.';
+            formAlert.classList.add('success');
+            formAlert.hidden = false;
+            contactForm.reset();
+        } catch {
+            formAlert.textContent = 'We could not send your request. Please review the form and try again.';
+            formAlert.classList.add('error');
+            formAlert.hidden = false;
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+        }
+    });
 }

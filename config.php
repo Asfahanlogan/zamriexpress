@@ -52,7 +52,7 @@ function is_admin_logged_in(): bool
 function require_admin_login(): void
 {
     if (!is_admin_logged_in()) {
-        header('Location: admin_db_database_messages_2026.php');
+        header('Location: admin_db_database_messages_2026.html');
         exit;
     }
 }

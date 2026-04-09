@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamri Express Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+    <main class="login-wrap" id="adminLoginView" hidden>
+        <section class="login-panel">
+            <span class="eyebrow">Admin Access</span>
+            <h1>Zamri Express Dashboard</h1>
+            <p class="dashboard-subtitle">Sign in to review incoming delivery requests and manage their status.</p>
+            <div class="form-alert error" id="adminLoginError" hidden></div>
+            <form class="contact-form" id="adminLoginForm">
+                <div class="form-group full">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group full">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                <div class="form-group full">
+                    <button type="submit" class="btn btn-primary form-submit">Login</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <main class="dashboard-shell" id="adminDashboardView" hidden>
+        <div class="container">
+            <section class="dashboard-hero">
+                <div class="dashboard-header">
+                    <div>
+                        <span class="eyebrow">Admin Dashboard</span>
+                        <h1>Incoming delivery requests</h1>
+                        <p class="dashboard-subtitle">Review new messages, mark them as read, or remove them when they are no longer needed.</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="adminLogoutBtn">Logout</button>
+                </div>
+            </section>
+
+            <section class="dashboard-card">
+                <div class="form-alert success" id="adminFlash" hidden></div>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Destination</th>
+                            <th>Package</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminOrdersBody"></tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+
