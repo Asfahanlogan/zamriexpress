@@ -1,6 +1,7 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const logoShowcase = document.querySelector('.logo-showcase');
+const formAlert = document.querySelector('#formAlert');
 
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
@@ -39,4 +40,21 @@ if (logoShowcase) {
             logoShowcase.classList.remove('is-flipped');
         }
     });
+}
+
+if (formAlert) {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+
+    if (status === 'success') {
+        formAlert.textContent = 'Your request has been sent successfully. Our team will contact you shortly.';
+        formAlert.classList.add('success');
+        formAlert.hidden = false;
+    }
+
+    if (status === 'error') {
+        formAlert.textContent = 'We could not send your request. Please review the form and try again.';
+        formAlert.classList.add('error');
+        formAlert.hidden = false;
+    }
 }

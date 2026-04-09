@@ -4,7 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
+    header('Location: index.html');
     exit;
 }
 
@@ -24,7 +24,7 @@ if (
     !filter_var($email, FILTER_VALIDATE_EMAIL) ||
     !in_array($destination, $allowedDestinations, true)
 ) {
-    header('Location: index.php?status=error');
+    header('Location: index.html?status=error#contact');
     exit;
 }
 
@@ -42,9 +42,9 @@ try {
         ':package_description' => $packageDescription,
     ]);
 
-    header('Location: index.php?status=success');
+    header('Location: index.html?status=success#contact');
     exit;
 } catch (Throwable $exception) {
-    header('Location: index.php?status=error');
+    header('Location: index.html?status=error#contact');
     exit;
 }
